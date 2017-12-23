@@ -1,5 +1,5 @@
 # aws-dyndns
-A minimalistic approach to Dynamic DNS using AWS Route 53.
+A minimalistic approach to Dynamic DNS using AWS Route 53, that check your ip with ifconfig.
 
 # Motivation
 
@@ -7,7 +7,7 @@ This whole solution was done in just a few hours, because it offloads most of th
 - you need a hosted DNS zone under AWS Route 53
 - interaction with the AWS API is done using their official command-line CLI
 - authentication is done by AWS using a restricted IAM user
-- your remote IP address is discovered using the free ["ipify" service](https://www.ipify.org/)
+- your remote IP address is discovered using ifconfig, because you are using PPPoE
 
 Communication is done entirely via HTTPS, and does not require "root" on the Linux machine.
 

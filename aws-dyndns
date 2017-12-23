@@ -28,7 +28,7 @@ while [ 1 ] ; do
 	TS="$REFRESH_TIME" # first run is without a sleep
 
 	OLD_IP="$(dig +short "$DNS_FQDN")"
-	NEW_IP="$(curl -sS --max-time 5 https://api.ipify.org)"
+	NEW_IP="$(ifconfig ppp0 | grep inet | tr -s " " | cut -d " " -f3)"
 
 	if ! validate_ip "$OLD_IP" ; then
 		echo "Invalid OLD_IP: $OLD_IP"
